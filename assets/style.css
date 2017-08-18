@@ -1,0 +1,17 @@
+body {
+  margin: auto;
+  max-width: 750px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: grey;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

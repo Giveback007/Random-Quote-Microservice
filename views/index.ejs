@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/pure/pure-min.css"/>
+    <link rel="stylesheet" href="/assets/style.css"/>
+    <title>Random Quote Microservice</title>
+  </head>
+  <body>
+    <header>
+      <h1>Random Quote Microservice</h1>
+
+      <h3>There is currently <code><%= maxIndex %></code> quotes stored in this api.</h3>
+
+      <p>To access a random quote[s] simply pass one of the fallowing in to the end of the url after the '/'</p>
+      <ul>
+        <li><code>/rand</code> to give a random quote</li>
+        <li><code>/all</code> to generate all the stored quotes in a JSON format</li>
+        <li>a number like <code>/<%= rand %></code> to generate a specific quote from the stored quotes</li>
+      </ul>
+
+      <h2>Example API links:</h2>
+      <a href="/rand"><code>/rand</code></a>
+      <br/>
+      <a href="/all"><code>/all</code></a>
+      <br/>
+      <a href="/15"><code>/<%= rand %></code></a>
+
+      <h2>Example Output For /rand:</h2>
+        <code>
+          {
+            <br/>"author": "<%= author %>" ,
+            <br/>"quote": "<%= quote %>"
+          <br/>}
+      </code>
+    </header>
+  </body>
+</html>
