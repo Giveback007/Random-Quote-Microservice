@@ -8,10 +8,6 @@ h1, h2 {
   color: grey;
 }
 
-a {
-  text-decoration: none;
-}
-
 a:hover {
   text-decoration: underline;
 }

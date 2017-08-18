@@ -4,9 +4,10 @@ const express = require('express');
 const app = new express();
 app.set('view engine', 'ejs');
 const quotes = require('./assets/quotes.js');
+const url = require('url');
 
 
-// app.use(express.static('./'))
+app.use(express.static('./'))
 
 app.get('/', function(req, res){
   var qtLn = quotes.length;
@@ -15,7 +16,8 @@ app.get('/', function(req, res){
     maxIndex: qtLn - 1,
     rand: rand,
     author: quotes[rand].author,
-    quote: quotes[rand].quote
+    quote: quotes[rand].quote,
+    url: req.get('host')
   });
 });
 
