@@ -9,7 +9,7 @@ const url = require('url');
 
 app.use(express.static('./'))
 
-app.get('/', function(req, res){
+app.get('/', (req, res) => {
   var qtLn = quotes.length;
   var rand = Math.floor(Math.random() * qtLn);
  	res.render('index',{
@@ -36,7 +36,7 @@ app.get('/:str', (req, res) => {
 
   // error JSON for invalid arguments
   if (!isValid) {
-    return res.json({error: `/${str} <-- is invalid`, try: '/rand', or: '/all', 'also': `/${rand}`})
+    return res.jsonp({error: `/${str} <-- is invalid`, try: '/rand', or: '/all', 'also': `/${rand}`})
   }
 
   // return the number for the maxIndex
@@ -44,17 +44,17 @@ app.get('/:str', (req, res) => {
 
   // return a random quote
   if (str === 'rand') {
-    return res.json(quotes[rand]);
+    return res.jsonp(quotes[rand]);
   }
 
   // return all quotes
   if (str === 'all') {
-    return res.json(quotes);
+    return res.jsonp(quotes);
   }
 
   // return a specific quote
   if (typeof parseInt(str) === 'number') {
-    return res.json(quotes[str]);
+    return res.jsonp(quotes[str]);
   }
 })
 // --- API /\

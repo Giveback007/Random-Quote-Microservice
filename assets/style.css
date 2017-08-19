@@ -8,6 +8,11 @@ h1, h2 {
   color: grey;
 }
 
-a:hover {
-  text-decoration: underline;
+code {
+  color: blue;
+}
+
+.examples p {
+  margin: 0;
+  color: blue;
 }
